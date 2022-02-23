@@ -39,7 +39,7 @@ export default {
     methods: {
         sendMail: function () {
             // in a real app, it would be better if the URL is extracted as a env variable
-            const url = ' http://localhost:5001/vue-contact-form-3c668/us-central1/sendEmailCF';
+            const url = ' http://localhost:8080/sendEmailCF';
             const {name, email, message} = this.contactFormData;
             const payload = {name, email, message};
             fetch(url, {

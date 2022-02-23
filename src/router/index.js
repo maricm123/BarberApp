@@ -17,7 +17,7 @@ const routes = [
     component: Contact
   },
   {
-    path: '/zakazi',
+    path: '/',
     name: 'Zakazi',
     component: Zakazi
   },
