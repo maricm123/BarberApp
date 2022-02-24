@@ -1,11 +1,9 @@
+
+// DRUGA SMENA
+
+
 export default {
     hours: [
-        {hour: 11, minutes: 0},
-        {hour: 11, minutes: 30},
-        {hour: 12, minutes: 0},
-        {hour: 12, minutes: 30},
-        {hour: 13, minutes: 0},
-        {hour: 13, minutes: 30},
         {hour: 14, minutes: 0},
         {hour: 14, minutes: 30},
         {hour: 15, minutes: 0},

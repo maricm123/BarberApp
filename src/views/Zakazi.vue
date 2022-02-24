@@ -8,16 +8,15 @@
           @change="updateDate"
           v-model="date"
           :lowerLimit="new Date()"
-          :upperLimit="new Date(new Date().getTime()+(3*24*60*60*1000))" 
+          
           
           />
       </div>
     </div><br>
     <h1 id="title" class="title">{{date.toLocaleDateString()}}</h1>
-  
-    <!-- <div v-if="this.weekNumber % 2 == 1">{{this.weekNumber}}</div>
-    <div v-if="this.weekNumber % 2 == 0">{{this.weekNumber}}</div> -->
-
+  <!-- :upperLimit="new Date(new Date().getTime()+(3*24*60*60*1000))"  -->
+  <h1 v-if="this.weekNumber % 2 == 1">{{this.weekNumber}} </h1>
+  <h1 v-if="this.weekNumber % 2 == 0">{{this.weekNumber}} </h1>
     <div class="float-container">
     <div class="float-child"> 
       <div class="first">
@@ -87,27 +86,40 @@
         </div>
   </div>
     <br> <br>
-    <!-- <h1 class="title">{{date.toLocaleDateString()}} </h1> -->
-    <div v-if="isOpenOnDateSanja" class="columns is-multiline" style="margin: 2em">
+    <div v-if="this.weekNumber % 2 == 0">
+    <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
+        <div v-for:="fixture in calendar" class="column is-2">
+            <div class="fixture" @click="showModalSanja(fixture)"
+                  v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
+                {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
+            </div>
+      </div>
+    </div>
+    </div>
+
+    <div v-else-if="this.weekNumber % 2 == 1">
+    <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendarSanja" class="column is-2">
             <div class="fixture" @click="showModalSanja(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
       </div>
-      
-        
     </div>
+    </div>
+
+    
     <div v-else-if="isSaturdaySanja" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendarSaturdaySanja" class="column is-2">
             <div class="fixture" @click="showModalSanja(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
-    
         </div>
     </div>
     
+  
+
     <div v-else>
         <br><br>
         <h1 class="subtitle has-text-danger">Neradni dan</h1>
@@ -185,16 +197,29 @@
         </div>
   </div>
     <br> <br>
-    <!-- <h1 class="title">{{date.toLocaleDateString()}} </h1> -->
+    <div v-if="this.weekNumber % 2 == 1">
     <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendar" class="column is-2">
             <div class="fixture" @click="showModal(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
-        </div>
-        
+      </div>
     </div>
+    </div>
+
+    <div v-else-if="this.weekNumber % 2 == 0">
+    <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
+        <div v-for:="fixture in calendarSanja" class="column is-2">
+            <div class="fixture" @click="showModal(fixture)"
+                  v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
+                {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
+            </div>
+      </div>
+    </div>
+    </div>
+
+
     <div v-else-if="isSaturday" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendarSaturday" class="column is-2">
             <div class="fixture" @click="showModal(fixture)"
@@ -218,8 +243,8 @@
 <script>
 import useValidate from '@vuelidate/core'
 import Datepicker from 'vue3-datepicker'
-import schedule from "../config/schedule";
-import scheduleSanja from "../config/scheduleSanja";
+import firstShift from "../config/firstShift";
+import secondShift from "../config/secondShift";
 import {mapState, mapActions} from 'vuex';
 import firebase from 'firebase/compat/app'
 import auth from 'firebase/compat/auth'
@@ -249,8 +274,8 @@ export default {
         isBooking: false,
         showBookingModal: false,
         date: date,
-        schedule: schedule.hours,
-        scheduleSaturday: schedule.hoursSaturday,    
+        firstShift: firstShift.hours,
+        firstShiftSaturday: firstShift.hoursSaturday,    
         newBookingSanja: {
             name: '',
             phone: '',
@@ -260,8 +285,8 @@ export default {
         isBookingSanja: false,
         showBookingModalSanja: false,
         date: date,
-        scheduleSanja: scheduleSanja.hours,
-        scheduleSaturdaySanja: scheduleSanja.hoursSaturday,      
+        secondShift: secondShift.hours,
+        secondShiftSaturday: secondShift.hoursSaturday,      
       
     }
     
@@ -323,15 +348,20 @@ export default {
             ...mapActions('bookings', ['create', 'getReservations']),
             ...mapActions('bookingsSanja', ['createSanja', 'getReservationsSanja']),
 
-           
-
-           
-            
-            doBooking: function () {    
+            doBooking: function () { 
+                var user = firebase. auth(). currentUser;   
                 this.v$.$validate()
+                if (user) {
+                  this.create().then(code => {
+                      this.generatedCode = code;
+                      this.showBookingModal = false;
+                      this.isBooking = false; 
+                      this.getReservations();
+                  });
                 if (!this.v$.$error) {
                   alert("Uspesno ste izvrsili rezervaciju"
                   )
+                }else {
                   this.isBooking = true;
                   let date = new Date(this.date.toDateString() + ' 12:00:00');
                   date.setHours(this.newBooking.fixture.hour, this.newBooking.fixture.minutes, 0);
@@ -347,6 +377,7 @@ export default {
                       this.isBooking = false; 
                       this.getReservations();
                   });
+                }
                 }else {
                   alert("Molimo Vas unesite ispravno podatke")
                 }
@@ -432,38 +463,38 @@ export default {
 
 
      weekNumber: function() {
-              var date = new Date();
+              var date = new Date(this.date);
+              var dateForF = new Date();
               
-              console.log(this.date);
-              var oneJan = new Date(date.getFullYear(),0,1);
+              var oneJan = new Date(dateForF.getFullYear(),0,1);
               
               var numberOfDays = Math.floor((date - oneJan) / (24 * 60 * 60 * 1000));
               
-              var result = Math.ceil(( date.getDay() + 1 + numberOfDays) / 7);
+              var result = Math.ceil(( dateForF.getDay() + 2 + numberOfDays) / 7);
               return result;
             },
 
 
 
     isOpenOnDate() {
-        return schedule.openingDays.includes(this.date.getDay());
+        return firstShift.openingDays.includes(this.date.getDay());
     },
     isOpenOnDateSanja() {
-        return scheduleSanja.openingDays.includes(this.date.getDay());
+        return secondShift.openingDays.includes(this.date.getDay());
     },
     user() {
         return firebase.auth().currentUser;
     },
     isSaturday() {
-        return schedule.saturday.includes(this.date.getDay());
+        return firstShift.saturday.includes(this.date.getDay());
     },
     isSaturdaySanja() {
-        return scheduleSanja.saturday.includes(this.date.getDay());
+        return secondShift.saturday.includes(this.date.getDay());
         
     },
     calendar: function () {
             let calendar = [];
-            this.schedule.forEach(hour => {
+            this.firstShift.forEach(hour => {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
@@ -481,7 +512,7 @@ export default {
         },
       calendarSanja: function () {
             let calendar = [];
-            this.scheduleSanja.forEach(hour => {
+            this.secondShift.forEach(hour => {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
@@ -499,7 +530,7 @@ export default {
         },
     calendarSaturday: function () {
             let calendarSaturday = [];
-            this.scheduleSaturday.forEach(hour => {
+            this.firstShiftSaturday.forEach(hour => {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
@@ -519,7 +550,7 @@ export default {
     },
     calendarSaturdaySanja: function () {
             let calendarSaturdayS = [];
-            this.scheduleSaturdaySanja.forEach(hour => {
+            this.secondShiftSaturday.forEach(hour => {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
@@ -553,7 +584,7 @@ export default {
 <style lang = "scss" scoped>
 /* HALF */
 
-.float-container {
+/* .float-container {
     
     padding: 20px;
 }
@@ -563,7 +594,7 @@ export default {
     float: left;
     padding: 60px;
     position: relative;
-}  
+}   */
 
 
 /* DATE PICKER */

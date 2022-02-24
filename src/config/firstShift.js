@@ -1,3 +1,7 @@
+
+
+// PRVA SMENA
+
 export default {
     hours: [
         {hour: 11, minutes: 0},
@@ -8,14 +12,7 @@ export default {
         {hour: 13, minutes: 30},
         {hour: 14, minutes: 0},
         {hour: 14, minutes: 30},
-        {hour: 15, minutes: 0},
-        {hour: 15, minutes: 30},
-        {hour: 16, minutes: 0},
-        {hour: 16, minutes: 30},
-        {hour: 17, minutes: 0},
-        {hour: 17, minutes: 30},
-        {hour: 18, minutes: 0},
-        {hour: 18, minutes: 30},
+       
        
     ],
     hoursSaturday: [
