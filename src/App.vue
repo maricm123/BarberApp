@@ -1,9 +1,10 @@
 <template>
   <div id="nav">
     <Navigation />
+    
     <router-view />
-    <!-- <Call /> -->
-    <!-- <Footer /> -->
+    <Call />
+    <Footer />
   </div>
 
 </template>
@@ -20,7 +21,8 @@ export default {
   components: {
     Navigation,
     Footer,
-    Call
+    Call,
+    
   },
   setup() {
     const router = useRouter();

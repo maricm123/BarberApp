@@ -1,7 +1,3 @@
-
-
-// PRVA SMENA
-
 export default {
     hours: [
         {hour: 11, minutes: 0},
@@ -31,7 +27,5 @@ export default {
     openingDays: [1, 2, 3, 4, 5],
     saturday:[6],
 
-    closedDay: ["Neradni dan"]
-    
+    closedDay: [0]
 }
-        

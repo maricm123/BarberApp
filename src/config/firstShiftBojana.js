@@ -1,19 +1,18 @@
 
-// DRUGA SMENA
 
+// PRVA SMENA
 
 export default {
     hours: [
+        {hour: 11, minutes: 0},
+        {hour: 11, minutes: 30},
+        {hour: 12, minutes: 0},
+        {hour: 12, minutes: 30},
+        {hour: 13, minutes: 0},
+        {hour: 13, minutes: 30},
         {hour: 14, minutes: 0},
         {hour: 14, minutes: 30},
-        {hour: 15, minutes: 0},
-        {hour: 15, minutes: 30},
-        {hour: 16, minutes: 0},
-        {hour: 16, minutes: 30},
-        {hour: 17, minutes: 0},
-        {hour: 17, minutes: 30},
-        {hour: 18, minutes: 0},
-        {hour: 18, minutes: 30},
+       
        
     ],
     hoursSaturday: [
@@ -32,7 +31,7 @@ export default {
     openingDays: [1, 2, 3, 4, 5],
     saturday:[6],
 
-    closedDay: ["Neradni dan"]
+    closedDay: [0]
     
 }
         

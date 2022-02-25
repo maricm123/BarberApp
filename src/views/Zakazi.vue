@@ -36,8 +36,8 @@
     
   
     <!-- <img src="data:image/jpeg;base64,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" alt="" class="profileimage"> -->
-
-
+  <br> <br>
+  <h1>Sanja</h1>
   <div v-if="date !== null">
 
     <div class="modal" v-if="showBookingModalSanja">
@@ -52,7 +52,7 @@
                         <p>Datum: {{date.toLocaleDateString()}}</p>
                         <p>Vreme: {{newBookingSanja.fixture.hour}}:{{ ('0'+newBookingSanja.fixture.minutes).slice(-2)}}</p>
                     
-                        <br>
+                        <br> 
                             <input required placeholder="Ime i prezime" v-model="stateSanja.newBookingSanja.name" type="text"><br>
                             <span style="font-size: 11px" v-if="vSanja$.newBookingSanja.name.$error">
                               {{ vSanja$.newBookingSanja.name.$errors[0].$message }}
@@ -85,10 +85,10 @@
                 </div>
         </div>
   </div>
-    <br> <br>
+    <br> 
     <div v-if="this.weekNumber % 2 == 0">
     <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
-        <div v-for:="fixture in calendar" class="column is-2">
+        <div v-for:="fixture in calendarFirstShiftSanja" class="column is-2">
             <div class="fixture" @click="showModalSanja(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
@@ -97,9 +97,9 @@
     </div>
     </div>
 
-    <div v-else-if="this.weekNumber % 2 == 1">
+    <div v-if="this.weekNumber % 2 == 1">
     <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
-        <div v-for:="fixture in calendarSanja" class="column is-2">
+        <div v-for:="fixture in calendarSecondShiftSanja" class="column is-2">
             <div class="fixture" @click="showModalSanja(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
@@ -109,18 +109,19 @@
     </div>
 
     
-    <div v-else-if="isSaturdaySanja" class="columns is-multiline" style="margin: 2em">
+    <!-- <div v-if="isSaturdaySanja" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendarSaturdaySanja" class="column is-2">
             <div class="fixture" @click="showModalSanja(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
+    
         </div>
-    </div>
+    </div> -->
     
   
 
-    <div v-else>
+   <div v-if="isSunday">
         <br><br>
         <h1 class="subtitle has-text-danger">Neradni dan</h1>
     </div>
@@ -146,7 +147,7 @@
     </div>
   
       <!-- <img src="data:image/jpeg;base64,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" alt="" class="profileimage"> -->
-
+  <h1>Bojana</h1>
   <div v-if="date !== null">
 
     <div class="modal" v-if="showBookingModal">
@@ -157,7 +158,7 @@
                         <p><strong>Popuni formu tvojim podacima </strong></p>
 
                         <br>
-                        <p>Frizer: Neko drugi</p>
+                        <p>Frizer: Bojana</p>
                         <p>Datum: {{date.toLocaleDateString()}}</p>
                         <p>Vreme: {{newBooking.fixture.hour}}:{{ ('0'+newBooking.fixture.minutes).slice(-2)}}</p>
                         
@@ -196,10 +197,10 @@
                 </div>
         </div>
   </div>
-    <br> <br>
+    <br>
     <div v-if="this.weekNumber % 2 == 1">
     <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
-        <div v-for:="fixture in calendar" class="column is-2">
+        <div v-for:="fixture in calendarFirstShiftBojana" class="column is-2">
             <div class="fixture" @click="showModal(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
@@ -208,9 +209,9 @@
     </div>
     </div>
 
-    <div v-else-if="this.weekNumber % 2 == 0">
+    <div v-if="this.weekNumber % 2 == 0">
     <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
-        <div v-for:="fixture in calendarSanja" class="column is-2">
+        <div v-for:="fixture in calendarSecondShiftBojana" class="column is-2">
             <div class="fixture" @click="showModal(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
@@ -219,8 +220,8 @@
     </div>
     </div>
 
-
-    <div v-else-if="isSaturday" class="columns is-multiline" style="margin: 2em">
+    
+    <!-- <div v-if="isSaturday" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendarSaturday" class="column is-2">
             <div class="fixture" @click="showModal(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
@@ -228,9 +229,10 @@
             </div>
     
         </div>
-    </div>
+    </div> -->
     
-    <div v-else>
+    
+    <div v-if="isSunday">
         <br><br>
         <h1 class="subtitle has-text-danger">Neradni dan</h1>
     </div>
@@ -243,8 +245,10 @@
 <script>
 import useValidate from '@vuelidate/core'
 import Datepicker from 'vue3-datepicker'
-import firstShift from "../config/firstShift";
-import secondShift from "../config/secondShift";
+import firstShiftBojana from "../config/firstShiftBojana";
+import secondShiftBojana from "../config/secondShiftBojana";
+import firstShiftSanja from "../config/firstShiftSanja";
+import secondShiftSanja from "../config/secondShiftSanja";
 import {mapState, mapActions} from 'vuex';
 import firebase from 'firebase/compat/app'
 import auth from 'firebase/compat/auth'
@@ -274,8 +278,11 @@ export default {
         isBooking: false,
         showBookingModal: false,
         date: date,
-        firstShift: firstShift.hours,
-        firstShiftSaturday: firstShift.hoursSaturday,    
+        firstShiftSanja: firstShiftSanja.hours,
+        firstShiftBojana: firstShiftBojana.hours,
+        secondShiftSanja: secondShiftSanja.hours,
+        secondShiftBojana: secondShiftBojana.hours,
+        // firstShiftSaturday: firstShift.hoursSaturday,    
         newBookingSanja: {
             name: '',
             phone: '',
@@ -285,8 +292,7 @@ export default {
         isBookingSanja: false,
         showBookingModalSanja: false,
         date: date,
-        secondShift: secondShift.hours,
-        secondShiftSaturday: secondShift.hoursSaturday,      
+        // secondShiftSaturday: secondShift.hoursSaturday,      
       
     }
     
@@ -348,20 +354,11 @@ export default {
             ...mapActions('bookings', ['create', 'getReservations']),
             ...mapActions('bookingsSanja', ['createSanja', 'getReservationsSanja']),
 
-            doBooking: function () { 
-                var user = firebase. auth(). currentUser;   
+            doBooking: function () {    
                 this.v$.$validate()
-                if (user) {
-                  this.create().then(code => {
-                      this.generatedCode = code;
-                      this.showBookingModal = false;
-                      this.isBooking = false; 
-                      this.getReservations();
-                  });
                 if (!this.v$.$error) {
                   alert("Uspesno ste izvrsili rezervaciju"
                   )
-                }else {
                   this.isBooking = true;
                   let date = new Date(this.date.toDateString() + ' 12:00:00');
                   date.setHours(this.newBooking.fixture.hour, this.newBooking.fixture.minutes, 0);
@@ -377,7 +374,6 @@ export default {
                       this.isBooking = false; 
                       this.getReservations();
                   });
-                }
                 }else {
                   alert("Molimo Vas unesite ispravno podatke")
                 }
@@ -404,21 +400,11 @@ export default {
               
             },
 
-            doBookingSanja: function () {  
-                var user = firebase. auth(). currentUser;  
+            doBookingSanja: function () {    
                 this.vSanja$.$validate()
-                if (user) {
-                    this.createSanja().then(code => {
-                      this.generatedCode = code;
-                      this.showBookingModalSanja = false;
-                      this.isBookingSanja = false; 
-                      this.getReservationsSanja();
-                  }); 
                 if (!this.vSanja$.$error) {
                   alert("Uspesno ste izvrsili rezervaciju"
                   )
-                  
-                  }else {
                   this.isBookingSanja = true;
                   let date = new Date(this.date.toDateString() + ' 12:00:00');
                   date.setHours(this.newBookingSanja.fixture.hour, this.newBookingSanja.fixture.minutes, 0);
@@ -434,7 +420,6 @@ export default {
                       this.isBookingSanja = false; 
                       this.getReservationsSanja();
                   }); 
-                  }
                 }else {
                   alert("Molimo Vas unesite ispravno podatke")
                 }
@@ -477,24 +462,26 @@ export default {
 
 
     isOpenOnDate() {
-        return firstShift.openingDays.includes(this.date.getDay());
+        return firstShiftSanja.openingDays.includes(this.date.getDay());
     },
-    isOpenOnDateSanja() {
-        return secondShift.openingDays.includes(this.date.getDay());
+    isSunday() {
+        return firstShiftSanja.closedDay.includes(this.date.getDay());
     },
+    // isOpenOnDateSanja() {
+    //     return secondShift.openingDays.includes(this.date.getDay());
+    // },
     user() {
         return firebase.auth().currentUser;
     },
     isSaturday() {
-        return firstShift.saturday.includes(this.date.getDay());
+        return firstShiftSanja.saturday.includes(this.date.getDay());
     },
     isSaturdaySanja() {
-        return secondShift.saturday.includes(this.date.getDay());
-        
+        return secondShiftSanja.saturday.includes(this.date.getDay());  
     },
-    calendar: function () {
+    calendarFirstShiftBojana: function () {
             let calendar = [];
-            this.firstShift.forEach(hour => {
+            this.firstShiftBojana.forEach(hour => {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
@@ -510,62 +497,101 @@ export default {
             });
             return calendar;
         },
-      calendarSanja: function () {
+        calendarSecondShiftBojana: function () {
             let calendar = [];
-            this.secondShift.forEach(hour => {
+            this.secondShiftBojana.forEach(hour => {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
+                    let reservation = this.reservations.filter(x => {
+                        return x.date.seconds === (date.getTime() / 1000)
+                    });
+                    calendar.push({
+                        hour: hour.hour,
+                        minutes: hour.minutes,
+                        isBooked: reservation.length === 1
+                    });
+                }
+            });
+            return calendar;
+        },
+      calendarFirstShiftSanja: function () {
+            let calendarSanja = [];
+            this.firstShiftSanja.forEach(hour => {
+                let date = new Date(this.date.toDateString() + ' 12:00:00');
+                date.setHours(hour.hour, hour.minutes, 0);
+                if (date >= new Date()) {
+                  //  OVDE JE PROBLEM RESERVATIONSSANJA
                     let reservation = this.reservationsSanja.filter(x => {
                         return x.date.seconds === (date.getTime() / 1000)
                     });
-                    calendar.push({
+                    calendarSanja.push({
                         hour: hour.hour,
                         minutes: hour.minutes,
                         isBooked: reservation.length === 1
                     });
                 }
             });
-            return calendar;
+            return calendarSanja;
         },
-    calendarSaturday: function () {
-            let calendarSaturday = [];
-            this.firstShiftSaturday.forEach(hour => {
+        calendarSecondShiftSanja: function () {
+            let calendarSanja = [];
+            this.secondShiftSanja.forEach(hour => {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
-                    let reservation = this.reservations.filter(x => {
+                  //  OVDE JE PROBLEM RESERVATIONSSANJA
+                    let reservation = this.reservationsSanja.filter(x => {
                         return x.date.seconds === (date.getTime() / 1000)
                     });
-                    calendarSaturday.push({
+                    calendarSanja.push({
                         hour: hour.hour,
                         minutes: hour.minutes,
                         isBooked: reservation.length === 1
                     });
                 }
             });
-            return calendarSaturday;
-        }
+            return calendarSanja;
+        },
+    // calendarSaturday: function () {
+    //         let calendarSaturday = [];
+    //         this.firstShiftSaturday.forEach(hour => {
+    //             let date = new Date(this.date.toDateString() + ' 12:00:00');
+    //             date.setHours(hour.hour, hour.minutes, 0);
+    //             if (date >= new Date()) {
+    //                 let reservation = this.reservations.filter(x => {
+    //                     return x.date.seconds === (date.getTime() / 1000)
+    //                 });
+    //                 calendarSaturday.push({
+    //                     hour: hour.hour,
+    //                     minutes: hour.minutes,
+    //                     isBooked: reservation.length === 1
+    //                 });
+    //             }
+    //         });
+    //         return calendarSaturday;
+    //     },
       
-    },
-    calendarSaturdaySanja: function () {
-            let calendarSaturdayS = [];
-            this.secondShiftSaturday.forEach(hour => {
-                let date = new Date(this.date.toDateString() + ' 12:00:00');
-                date.setHours(hour.hour, hour.minutes, 0);
-                if (date >= new Date()) {
-                    let reservation = this.reservationsSanja.filter(x => {
-                        return x.date.seconds === (date.getTime() / 1000)
-                    });
-                    calendarSaturdayS.push({
-                        hour: hour.hour,
-                        minutes: hour.minutes,
-                        isBooked: reservation.length === 1
-                    });
-                }
-            });
-            return calendarSaturdayS;
-        },
+    
+    // calendarSaturdaySanja: function () {
+    //         let calendarSaturday = [];
+    //         this.secondShiftSaturday.forEach(hour => {
+    //             let date = new Date(this.date.toDateString() + ' 12:00:00');
+    //             date.setHours(hour.hour, hour.minutes, 0);
+    //             if (date >= new Date()) {
+    //                 let reservation = this.reservationsSanja.filter(x => {
+    //                     return x.date.seconds === (date.getTime() / 1000)
+    //                 });
+    //                 calendarSaturday.push({
+    //                     hour: hour.hour,
+    //                     minutes: hour.minutes,
+    //                     isBooked: reservation.length === 1
+    //                 });
+    //             }
+    //         });
+    //         return calendarSaturday;
+    //     },
+  },
     created() {
         this.getReservations();
         this.getReservationsSanja();
@@ -766,7 +792,6 @@ export default {
     button {
       align-self: center;
     }
-  }
-  
+  } 
 }
 </style>

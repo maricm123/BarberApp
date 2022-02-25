@@ -7,7 +7,7 @@
             <div class="nav-links">
                 <ul v-show="!mobile">
                   
-                    <router-link style="color: white; background-color: black; padding: 30px"  class="link" :to="{ name: 'Zakazi'}">Zakaži</router-link>
+                    <router-link  class="link" :to="{ name: 'Zakazi'}">Zakaži</router-link>
                     <router-link class="link" :to="{ name: 'Cenovnik' }">Cenovnik</router-link>
                     <router-link class="link" :to="{ name: 'Kontakt' }">Kontakt</router-link>
                 </ul>
@@ -24,7 +24,7 @@
         <transition name="mobile-nav">
             <ul class="mobile-nav" v-show="mobileNav" id="template">
                
-                <router-link @click="linkToggle()" style="color: white; background-color: black;"  class="link" :to="{ name: 'Zakazi'}">Zakaži</router-link>
+                <router-link @click="linkToggle()" class="link" :to="{ name: 'Zakazi'}">Zakaži</router-link>
                 <router-link @click="linkToggle()" class="link" :to="{ name: 'Cenovnik' }">Cenovnik</router-link>
                 <router-link @click="linkToggle()" class="link" :to="{ name: 'Kontakt' }">Kontakt</router-link>
             </ul>

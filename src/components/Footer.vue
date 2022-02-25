@@ -37,7 +37,7 @@
         </div> -->
       </div>
       <div class="right">
-        <p>Copyright 2021 All Rights Reserved</p>
+        <p>Copyright 2022 All Rights Reserved</p>
         <p>powered by <a style="color: white; text-decoration: underline; font-weight: 1000; text-decoration: none;" target=”_blank” href="https://www.linkedin.com/in/mihailo-maric-026525146/">Maric</a></p>
       </div>
     </div>

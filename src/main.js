@@ -6,8 +6,8 @@ import store from './store'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-
 import {firestorePlugin} from 'vuefire'
+import SvgIcon from "vue3-icon";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD4hgo5TXVq0wi7Qri5xYBL_U8SfXM6rJA",
