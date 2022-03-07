@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="save-btn">
+      <button style="background-color: black" @click="showModalNew = true">pogledaj ovde kako da zakažeš termin</button>
+    </div>
 
     <h1 class="subtitle">Izaberi datum</h1>
     <div class="datepicker-container">
@@ -12,14 +15,17 @@
           
           />
       </div>
-    </div><br>
+    </div>
+    <ModalNew v-show="showModalNew" />
+    
+    <ModalNew v-show="showModalNew" @close-modal="showModalNew = false" />
     <h1 id="title" class="title">{{date.toLocaleDateString()}}</h1>
   <!-- :upperLimit="new Date(new Date().getTime()+(3*24*60*60*1000))"  -->
-  <h1 v-if="this.weekNumber % 2 == 1">{{this.weekNumber}} </h1>
-  <h1 v-if="this.weekNumber % 2 == 0">{{this.weekNumber}} </h1>
-    <div class="float-container">
-    <div class="float-child"> 
-      <div class="first">
+  
+
+
+    
+    <div class="split left">
 
     <div v-if="user">
     <div class="datepicker-container">
@@ -36,7 +42,7 @@
     
   
     <!-- <img src="data:image/jpeg;base64,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" alt="" class="profileimage"> -->
-  <br> <br>
+ 
   <h1>Sanja</h1>
   <div v-if="date !== null">
 
@@ -85,7 +91,7 @@
                 </div>
         </div>
   </div>
-    <br> 
+  
     <div v-if="this.weekNumber % 2 == 0">
     <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendarFirstShiftSanja" class="column is-2">
@@ -94,6 +100,15 @@
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
       </div>
+    </div>
+    <div v-if="isSaturdaySanja" class="columns is-multiline" style="margin: 2em">
+        <div v-for:="fixture in calendarFirstShiftSaturdaySanja" class="column is-2">
+            <div class="fixture" @click="showModalSanja(fixture)"
+                  v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
+                {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
+            </div>
+    
+        </div>
     </div>
     </div>
 
@@ -105,32 +120,34 @@
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
       </div>
+      
     </div>
-    </div>
-
-    
-    <!-- <div v-if="isSaturdaySanja" class="columns is-multiline" style="margin: 2em">
-        <div v-for:="fixture in calendarSaturdaySanja" class="column is-2">
+    <div v-if="isSaturdaySanja" class="columns is-multiline" style="margin: 2em">
+        <div v-for:="fixture in calendarSecondShiftSaturdaySanja" class="column is-2">
             <div class="fixture" @click="showModalSanja(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
     
         </div>
-    </div> -->
+    </div>
+    </div>
+
+    
+    
     
   
 
    <div v-if="isSunday">
-        <br><br>
+        
         <h1 class="subtitle has-text-danger">Neradni dan</h1>
     </div>
 
     </div>
 
 
-    <div class="float-child">
-    <div class="second">
+    
+    <div class="split right">
 
     <div v-if="user">
     <div class="datepicker-container">
@@ -144,9 +161,9 @@
       </div>
     </div>
     </div>
-    </div>
+    
   
-      <!-- <img src="data:image/jpeg;base64,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" alt="" class="profileimage"> -->
+  <img src="data:image/jpeg;base64,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" alt="" class="profileimage">
   <h1>Bojana</h1>
   <div v-if="date !== null">
 
@@ -197,7 +214,7 @@
                 </div>
         </div>
   </div>
-    <br>
+    
     <div v-if="this.weekNumber % 2 == 1">
     <div v-if="isOpenOnDate" class="columns is-multiline" style="margin: 2em">
         <div v-for:="fixture in calendarFirstShiftBojana" class="column is-2">
@@ -206,6 +223,15 @@
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
       </div>
+    </div>
+     <div v-if="isSaturday" class="columns is-multiline" style="margin: 2em">
+        <div v-for:="fixture in calendarFirstShiftSaturdayBojana" class="column is-2">
+            <div class="fixture" @click="showModal(fixture)"
+                  v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
+                {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
+            </div>
+    
+        </div>
     </div>
     </div>
 
@@ -218,31 +244,34 @@
             </div>
       </div>
     </div>
-    </div>
-
-    
-    <!-- <div v-if="isSaturday" class="columns is-multiline" style="margin: 2em">
-        <div v-for:="fixture in calendarSaturday" class="column is-2">
+     <div v-if="isSaturday" class="columns is-multiline" style="margin: 2em">
+        <div v-for:="fixture in calendarSecondShiftSaturdayBojana" class="column is-2">
             <div class="fixture" @click="showModal(fixture)"
                   v-bind:class="{ 'booked': fixture.isBooked, 'free': !fixture.isBooked}">
                 {{fixture.hour}}:{{ ('0'+fixture.minutes).slice(-2)}}
             </div>
     
         </div>
-    </div> -->
+    </div>
+    </div>
+
+    
+   
     
     
     <div v-if="isSunday">
-        <br><br>
+        
         <h1 class="subtitle has-text-danger">Neradni dan</h1>
     </div>
- </div>
+ 
+
 </div>
-</div>
-</div>
+  </div>
+
 </template>
 
 <script>
+import ModalNew from "../components/ModalNew"
 import useValidate from '@vuelidate/core'
 import Datepicker from 'vue3-datepicker'
 import firstShiftBojana from "../config/firstShiftBojana";
@@ -259,13 +288,15 @@ import {reactive,  computed} from 'vue'
 export default {
   name: 'Zakazi',
   components: {
-    Datepicker
+    Datepicker,
+    ModalNew
   },
   
   data() {
     let date = new Date();
     date.setHours(12, 0, 0);
     return {
+      showModalNew: false,
       v$: useValidate(),
       vSanja$: useValidate(),
       
@@ -281,8 +312,7 @@ export default {
         firstShiftSanja: firstShiftSanja.hours,
         firstShiftBojana: firstShiftBojana.hours,
         secondShiftSanja: secondShiftSanja.hours,
-        secondShiftBojana: secondShiftBojana.hours,
-        // firstShiftSaturday: firstShift.hoursSaturday,    
+        secondShiftBojana: secondShiftBojana.hours,    
         newBookingSanja: {
             name: '',
             phone: '',
@@ -292,8 +322,10 @@ export default {
         isBookingSanja: false,
         showBookingModalSanja: false,
         date: date,
-        // secondShiftSaturday: secondShift.hoursSaturday,      
-      
+        firstShiftSaturdaySanja: firstShiftSanja.hoursSaturday,  
+        firstShiftSaturdayBojana: firstShiftBojana.hoursSaturday,  
+        secondShiftSaturdaySanja: secondShiftSanja.hoursSaturday,      
+        secondShiftSaturdayBojana: secondShiftBojana.hoursSaturday,  
     }
     
   },
@@ -447,18 +479,43 @@ export default {
     ...mapState('bookingsSanja', ['reservationsSanja']),
 
 
-     weekNumber: function() {
-              var date = new Date(this.date);
-              var dateForF = new Date();
+    //  weekNumber() {
+    //    var date = new Date(this.date);
+    //           var dateForF = new Date();
               
-              var oneJan = new Date(dateForF.getFullYear(),0,1);
+    //           var oneJan = new Date(dateForF.getFullYear(),0,4);
               
-              var numberOfDays = Math.floor((date - oneJan) / (24 * 60 * 60 * 1000));
+    //           var numberOfDays = Math.floor((date - oneJan) / (24 * 60 * 60 * 1000));
               
-              var result = Math.ceil(( dateForF.getDay() + 2 + numberOfDays) / 7);
-              return result;
-            },
+    //           var result = Math.ceil(( dateForF.getDay() + 2 + numberOfDays) / 7);
+    //           return result;
+              
 
+
+      // var todaydate = new Date();  
+  
+      //find the year of the current date  
+      //  var oneJan =  new Date(todaydate.getFullYear(), 0, 1);   
+    
+       // calculating number of days in given year before a given date   
+      //  var numberOfDays =  Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000));   
+    
+       // adding 1 since to current date and returns value starting from 0   
+      //  return  Math.ceil(( todaydate.getDay() + 1 + numberOfDays) / 7);
+      //  console.log(result)
+            // },
+
+      weekNumber: function() {
+        var date = new Date(this.date.getTime());
+        date.setHours(0, 0, 0, 0);
+        // Thursday in current week decides the year.
+        date.setDate(date.getDate() + 4 - (date.getDay() + 6) % 7);
+        // January 4 is always in week 1.
+        var week1 = new Date(date.getFullYear(), 0, 4);
+        // Adjust to Thursday in week 1 and count number of weeks from date to week1.
+        return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
+                              - 3 + (week1.getDay() + 6) % 7) / 7);
+      },
 
 
     isOpenOnDate() {
@@ -521,7 +578,6 @@ export default {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
-                  //  OVDE JE PROBLEM RESERVATIONSSANJA
                     let reservation = this.reservationsSanja.filter(x => {
                         return x.date.seconds === (date.getTime() / 1000)
                     });
@@ -573,33 +629,90 @@ export default {
     //     },
       
     
-    // calendarSaturdaySanja: function () {
-    //         let calendarSaturday = [];
-    //         this.secondShiftSaturday.forEach(hour => {
-    //             let date = new Date(this.date.toDateString() + ' 12:00:00');
-    //             date.setHours(hour.hour, hour.minutes, 0);
-    //             if (date >= new Date()) {
-    //                 let reservation = this.reservationsSanja.filter(x => {
-    //                     return x.date.seconds === (date.getTime() / 1000)
-    //                 });
-    //                 calendarSaturday.push({
-    //                     hour: hour.hour,
-    //                     minutes: hour.minutes,
-    //                     isBooked: reservation.length === 1
-    //                 });
-    //             }
-    //         });
-    //         return calendarSaturday;
-    //     },
+    calendarSecondShiftSaturdaySanja: function () {
+            let calendarSaturday = [];
+            this.secondShiftSaturdaySanja.forEach(hour => {
+                let date = new Date(this.date.toDateString() + ' 12:00:00');
+                date.setHours(hour.hour, hour.minutes, 0);
+                if (date >= new Date()) {
+                    let reservation = this.reservationsSanja.filter(x => {
+                        return x.date.seconds === (date.getTime() / 1000)
+                    });
+                    calendarSaturday.push({
+                        hour: hour.hour,
+                        minutes: hour.minutes,
+                        isBooked: reservation.length === 1
+                    });
+                }
+            });
+            return calendarSaturday;
+        },
+        calendarFirstShiftSaturdaySanja: function () {
+            let calendarSaturday = [];
+            this.firstShiftSaturdaySanja.forEach(hour => {
+                let date = new Date(this.date.toDateString() + ' 12:00:00');
+                date.setHours(hour.hour, hour.minutes, 0);
+                if (date >= new Date()) {
+                    let reservation = this.reservationsSanja.filter(x => {
+                        return x.date.seconds === (date.getTime() / 1000)
+                    });
+                    calendarSaturday.push({
+                        hour: hour.hour,
+                        minutes: hour.minutes,
+                        isBooked: reservation.length === 1
+                    });
+                }
+            });
+            return calendarSaturday;
+        },
+        calendarSecondShiftSaturdayBojana: function () {
+            let calendarSaturday = [];
+            this.secondShiftSaturdayBojana.forEach(hour => {
+                let date = new Date(this.date.toDateString() + ' 12:00:00');
+                date.setHours(hour.hour, hour.minutes, 0);
+                if (date >= new Date()) {
+                    let reservation = this.reservationsSanja.filter(x => {
+                        return x.date.seconds === (date.getTime() / 1000)
+                    });
+                    calendarSaturday.push({
+                        hour: hour.hour,
+                        minutes: hour.minutes,
+                        isBooked: reservation.length === 1
+                    });
+                }
+            });
+            return calendarSaturday;
+        },
+        calendarFirstShiftSaturdayBojana: function () {
+            let calendarSaturday = [];
+            this.firstShiftSaturdayBojana.forEach(hour => {
+                let date = new Date(this.date.toDateString() + ' 12:00:00');
+                date.setHours(hour.hour, hour.minutes, 0);
+                if (date >= new Date()) {
+                    let reservation = this.reservationsSanja.filter(x => {
+                        return x.date.seconds === (date.getTime() / 1000)
+                    });
+                    calendarSaturday.push({
+                        hour: hour.hour,
+                        minutes: hour.minutes,
+                        isBooked: reservation.length === 1
+                    });
+                }
+            });
+            return calendarSaturday;
+        },
   },
+    
+  
     created() {
         this.getReservations();
         this.getReservationsSanja();
 
-        
+        var date = new Date();
 
         if(this.weekNumber != null) {
           console.log(this.weekNumber)
+          console.log(date.getTime());
         }else {
           console.log("NISAM")
         }
@@ -610,17 +723,22 @@ export default {
 <style lang = "scss" scoped>
 /* HALF */
 
-/* .float-container {
-    
-    padding: 20px;
+.split {
+  height: 100%;
+  width: 50%;
 }
 
-.float-child {
-    width: 50%;
-    float: left;
-    padding: 60px;
-    position: relative;
-}   */
+.right {
+  right: 0;
+  float: right;
+  /* background-color: #000000; */
+  
+}
+
+.left {
+  left: 0;
+  float: left;
+}
 
 
 /* DATE PICKER */

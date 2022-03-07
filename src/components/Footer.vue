@@ -62,7 +62,7 @@ export default {
   color: white;
 }
 footer {
-  margin-top: auto;
+  margin-top: 55%;
   padding: 100px 25px;
   background-color: #000000;
   .container {
@@ -167,4 +167,5 @@ footer {
     }
   }
 }
+
 </style>

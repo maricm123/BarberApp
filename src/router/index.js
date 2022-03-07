@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Zakazi from '../views/Zakazi.vue'
 import Admin from '../views/Admin.vue'
-import AdminNekoDrugi from '../views/AdminNekoDrugi.vue'
+import AdminBojana from '../views/AdminBojana.vue'
 import AdminSanja from '../views/AdminSanja.vue'
 import Login from '../views/Login.vue'
 import Kontakt from '../views/Kontakt'
@@ -48,9 +48,9 @@ const routes = [
     component: AdminSanja
   },
   {
-    path: '/adminNekoDrugi',
-    name: 'AdminNekoDrugi',
-    component: AdminNekoDrugi
+    path: '/adminBojana',
+    name: 'AdminBojana',
+    component: AdminBojana
   },
 
   {

@@ -6,7 +6,7 @@
     <router-link class="float-child" id="link"  :to="{ name: 'AdminSanja' }">Sanja</router-link>
   
   
-    <router-link class="float-child" id="link"  :to="{ name: 'AdminNekoDrugi' }">Bojana</router-link>
+    <router-link class="float-child" id="link"  :to="{ name: 'AdminBojana' }">Bojana</router-link>
   
  
 
