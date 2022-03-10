@@ -163,7 +163,7 @@
     </div>
     
   
-  <img src="data:image/jpeg;base64,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" alt="" class="profileimage">
+  <!-- <img src="data:image/jpeg;base64,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" alt="" class="profileimage"> -->
   <h1>Bojana</h1>
   <div v-if="date !== null">
 
@@ -271,6 +271,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import ModalNew from "../components/ModalNew"
 import useValidate from '@vuelidate/core'
 import Datepicker from 'vue3-datepicker'
@@ -406,6 +407,22 @@ export default {
                       this.isBooking = false; 
                       this.getReservations();
                   });
+                  axios
+                    .get("https://emaildjangoapi.herokuapp.com/api/email/", {
+                        params: { receiver: this.state.newBooking.email,
+                                  name: this.state.newBooking.name,
+                                  frizer: "Bojana",
+                                  datum:  this.date.toDateString(),
+                                  sat: this.newBooking.fixture.hour,
+                                  minut: this.newBooking.fixture.minutes},
+                    })
+                    .then(() => {
+                        console.log(" success ");
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+
                 }else {
                   alert("Molimo Vas unesite ispravno podatke")
                 }
@@ -433,7 +450,7 @@ export default {
             },
 
             doBookingSanja: function () {    
-                this.vSanja$.$validate()
+              this.vSanja$.$validate()
                 if (!this.vSanja$.$error) {
                   alert("Uspesno ste izvrsili rezervaciju"
                   )
@@ -441,7 +458,7 @@ export default {
                   let date = new Date(this.date.toDateString() + ' 12:00:00');
                   date.setHours(this.newBookingSanja.fixture.hour, this.newBookingSanja.fixture.minutes, 0);
                   let payload = {
-                      name: this.stateSanja.newBookingSanja.name,
+                    name: this.stateSanja.newBookingSanja.name,
                       phone: this.stateSanja.newBookingSanja.phone,
                       email: this.stateSanja.newBookingSanja.email,
                       date: date
@@ -452,6 +469,23 @@ export default {
                       this.isBookingSanja = false; 
                       this.getReservationsSanja();
                   }); 
+
+                  
+                  axios
+                    .get("https://emaildjangoapi.herokuapp.com/api/email/", {
+                        params: { receiver: this.stateSanja.newBookingSanja.email,
+                                  name: this.stateSanja.newBookingSanja.name,
+                                  frizer: "Sanja",
+                                  datum:  this.date.toDateString(),
+                                  sat: this.newBookingSanja.fixture.hour,
+                                  minut: this.newBookingSanja.fixture.minutes},
+                    })
+                    .then(() => {
+                        console.log(" success ");
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
                 }else {
                   alert("Molimo Vas unesite ispravno podatke")
                 }
@@ -671,7 +705,7 @@ export default {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
-                    let reservation = this.reservationsSanja.filter(x => {
+                    let reservation = this.reservations.filter(x => {
                         return x.date.seconds === (date.getTime() / 1000)
                     });
                     calendarSaturday.push({
@@ -689,7 +723,7 @@ export default {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
-                    let reservation = this.reservationsSanja.filter(x => {
+                    let reservation = this.reservations.filter(x => {
                         return x.date.seconds === (date.getTime() / 1000)
                     });
                     calendarSaturday.push({
@@ -712,7 +746,7 @@ export default {
 
         if(this.weekNumber != null) {
           console.log(this.weekNumber)
-          console.log(date.getTime());
+          
         }else {
           console.log("NISAM")
         }
@@ -912,4 +946,8 @@ export default {
     }
   } 
 }
+
+/* Mobile responsive */
+
+
 </style>

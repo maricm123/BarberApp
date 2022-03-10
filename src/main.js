@@ -8,6 +8,9 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import {firestorePlugin} from 'vuefire'
 import SvgIcon from "vue3-icon";
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://127.0.0.1:8000'
 
 const firebaseConfig = {
     apiKey: "AIzaSyD4hgo5TXVq0wi7Qri5xYBL_U8SfXM6rJA",
@@ -22,4 +25,4 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-createApp(App).use(store).use(router).use(firestorePlugin).mount('#app')
+createApp(App).use(store).use(router, axios).use(firestorePlugin).mount('#app')
