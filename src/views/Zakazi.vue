@@ -11,6 +11,7 @@
           @change="updateDate"
           v-model="date"
           :lowerLimit="new Date()"
+          :upperLimit="new Date(new Date().getTime()+(3*24*60*60*1000))" 
           
           
           />
@@ -19,11 +20,13 @@
     <ModalNew v-show="showModalNew" />
     
     <ModalNew v-show="showModalNew" @close-modal="showModalNew = false" />
-    <h1 id="title" class="title">{{date.toLocaleDateString()}}</h1>
-  <!-- :upperLimit="new Date(new Date().getTime()+(3*24*60*60*1000))"  -->
+    <br>
+    <br>
+    <h1 id="title" class="title">Datum: {{date.toLocaleDateString()}}</h1>
   
 
-
+    <br>
+    <br>
     
     <div class="split left">
 
@@ -266,8 +269,10 @@
  
 
 </div>
+<div class="footer"> 
+<Footer />
+</div>
   </div>
-
 </template>
 
 <script>
@@ -285,12 +290,14 @@ import auth from 'firebase/compat/auth'
 import {onBeforeMount} from 'vue';
 import {required, email, minLength, helpers, maxLength, numeric} from '@vuelidate/validators'
 import {reactive,  computed} from 'vue'
+import Footer from '../components/Footer'
 
 export default {
   name: 'Zakazi',
   components: {
     Datepicker,
-    ModalNew
+    ModalNew,
+    Footer
   },
   
   data() {
@@ -390,7 +397,7 @@ export default {
             doBooking: function () {    
                 this.v$.$validate()
                 if (!this.v$.$error) {
-                  alert("Uspesno ste izvrsili rezervaciju"
+                  alert("Uspesno ste izvrsili rezervaciju, informacije su Vam poslate na mail."
                   )
                   this.isBooking = true;
                   let date = new Date(this.date.toDateString() + ' 12:00:00');
@@ -513,32 +520,6 @@ export default {
     ...mapState('bookingsSanja', ['reservationsSanja']),
 
 
-    //  weekNumber() {
-    //    var date = new Date(this.date);
-    //           var dateForF = new Date();
-              
-    //           var oneJan = new Date(dateForF.getFullYear(),0,4);
-              
-    //           var numberOfDays = Math.floor((date - oneJan) / (24 * 60 * 60 * 1000));
-              
-    //           var result = Math.ceil(( dateForF.getDay() + 2 + numberOfDays) / 7);
-    //           return result;
-              
-
-
-      // var todaydate = new Date();  
-  
-      //find the year of the current date  
-      //  var oneJan =  new Date(todaydate.getFullYear(), 0, 1);   
-    
-       // calculating number of days in given year before a given date   
-      //  var numberOfDays =  Math.floor((todaydate - oneJan) / (24 * 60 * 60 * 1000));   
-    
-       // adding 1 since to current date and returns value starting from 0   
-      //  return  Math.ceil(( todaydate.getDay() + 1 + numberOfDays) / 7);
-      //  console.log(result)
-            // },
-
       weekNumber: function() {
         var date = new Date(this.date.getTime());
         date.setHours(0, 0, 0, 0);
@@ -558,9 +539,6 @@ export default {
     isSunday() {
         return firstShiftSanja.closedDay.includes(this.date.getDay());
     },
-    // isOpenOnDateSanja() {
-    //     return secondShift.openingDays.includes(this.date.getDay());
-    // },
     user() {
         return firebase.auth().currentUser;
     },
@@ -630,7 +608,6 @@ export default {
                 let date = new Date(this.date.toDateString() + ' 12:00:00');
                 date.setHours(hour.hour, hour.minutes, 0);
                 if (date >= new Date()) {
-                  //  OVDE JE PROBLEM RESERVATIONSSANJA
                     let reservation = this.reservationsSanja.filter(x => {
                         return x.date.seconds === (date.getTime() / 1000)
                     });
@@ -642,26 +619,7 @@ export default {
                 }
             });
             return calendarSanja;
-        },
-    // calendarSaturday: function () {
-    //         let calendarSaturday = [];
-    //         this.firstShiftSaturday.forEach(hour => {
-    //             let date = new Date(this.date.toDateString() + ' 12:00:00');
-    //             date.setHours(hour.hour, hour.minutes, 0);
-    //             if (date >= new Date()) {
-    //                 let reservation = this.reservations.filter(x => {
-    //                     return x.date.seconds === (date.getTime() / 1000)
-    //                 });
-    //                 calendarSaturday.push({
-    //                     hour: hour.hour,
-    //                     minutes: hour.minutes,
-    //                     isBooked: reservation.length === 1
-    //                 });
-    //             }
-    //         });
-    //         return calendarSaturday;
-    //     },
-      
+        },      
     
     calendarSecondShiftSaturdaySanja: function () {
             let calendarSaturday = [];
@@ -742,24 +700,33 @@ export default {
         this.getReservations();
         this.getReservationsSanja();
 
-        var date = new Date();
-
-        if(this.weekNumber != null) {
-          console.log(this.weekNumber)
+        // var date = new Date();
+        // if(this.weekNumber != null) {
+        //   console.log(this.weekNumber)
           
-        }else {
-          console.log("NISAM")
-        }
+        // }else {
+        //   console.log("NISAM")
+        // }
     },
+    mounted: function() {
+      window.setInterval(() =>{
+        this.getReservations(), this.getReservationsSanja()
+      }, 7000)
+    }
   }
 </script>
 
 <style lang = "scss" scoped>
 /* HALF */
 
+.footer {
+  margin-top: 45%;
+}
+
 .split {
   height: 100%;
   width: 50%;
+  /* position: absolute; */
 }
 
 .right {
@@ -876,7 +843,6 @@ export default {
 
 
 
-
 .subtitle {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -949,5 +915,29 @@ export default {
 
 /* Mobile responsive */
 
+@media screen and (max-width: 800px) {
+  .split {
+    height: 100%;
+    width: 50%;
+    font-size: 15px;
+}
+  .fixture {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    height: 20px;
+    width: 100px;
+    justify-content: center;
+    justify-items: center;
+    margin: 7px;
+    border-radius: 20px;
+}
+    .title {
+      font-size: 25px;
+}
 
+
+  
+}
 </style>

@@ -101,7 +101,13 @@
         },
         created() {
             this.readData();
-        }
+        },
+      //   mounted: function() {
+      //     window.setInterval(() =>{
+      //       this.nextReservationsSanja()
+      //    console.log(" ALO ")
+      // }, 1000)
+        // }
     }
 </script>
 <style scoped>

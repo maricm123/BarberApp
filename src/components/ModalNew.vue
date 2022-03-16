@@ -3,10 +3,10 @@
     <div class="modal">
       
       <h6>Pravila zakazivanja</h6>
-      <p>-Odaberi datum koji želiš-</p>
-      <p>-Odaberi vreme i frizera-</p>
+      <p>-Odaberi datum-</p>
+      <p>-Odaberi vreme kod kog frizera želiš-</p>
       <p>-Popuni odgovarajuća polja svojim informacijama-</p>
-      <p>-Ukoliko želiš da otkažeš, nazovi na broj-</p>
+      <p>-Ukoliko želiš da otkažeš, nazovi na broj +381691303083-</p>
       <div class="close" @click="$emit('close-modal')">
       <button class="btn">zatvori</button>
       </div>

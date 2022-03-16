@@ -4,7 +4,7 @@
     
     <router-view />
     <Call />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 
 </template>

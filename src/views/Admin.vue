@@ -41,7 +41,7 @@ export default {
                 },
 }
 </script>
-<style scoped>
+<style lang = "scss" scoped>
 
 @import "http://fonts.googleapis.com/css?family=Montserrat:300,400,700";
 .float-container {
@@ -67,14 +67,15 @@ button {
     .float-container {
     margin-top: 10%;
     font-size: 20px;
-    
-}
+    }
 
 .float-child {
     
+    text-align: center;
     border: 4px solid rgb(0, 0, 0);
     text-decoration: none;
     color: black;
+    padding: 20px;
 }  
 
     
