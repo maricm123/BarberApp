@@ -54,7 +54,7 @@
       <div class="card">
                     <div class="card-content">
                         <br>
-                        <p><strong>Popuni formu tvojim podacima </strong></p>
+                        <p><strong>Popuni formu svojim podacima </strong></p>
 
                         <br>
                         <p>Frizer: Sanja</p>
@@ -175,7 +175,7 @@
       <div class="card">
                     <div class="card-content">
                         <br>
-                        <p><strong>Popuni formu tvojim podacima </strong></p>
+                        <p><strong>Popuni formu svojim podacima </strong></p>
 
                         <br>
                         <p>Frizer: Bojana</p>
@@ -459,7 +459,7 @@ export default {
             doBookingSanja: function () {    
               this.vSanja$.$validate()
                 if (!this.vSanja$.$error) {
-                  alert("Uspesno ste izvrsili rezervaciju"
+                  alert("Uspesno ste izvrsili rezervaciju, informacije su Vam poslate na mail."
                   )
                   this.isBookingSanja = true;
                   let date = new Date(this.date.toDateString() + ' 12:00:00');
