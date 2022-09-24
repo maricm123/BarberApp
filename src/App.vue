@@ -1,55 +1,50 @@
 <template>
   <div id="nav">
     <Navigation />
-    
+
     <router-view />
     <Call />
     <!-- <Footer /> -->
   </div>
-
 </template>
 
 <script>
-import {onBeforeMount} from 'vue';
-import {useRouter, useRoute} from 'vue-router';
-import firebase from 'firebase/compat/app'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
-import Call from './components/Call'
+import { onBeforeMount } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import firebase from "firebase/compat/app";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Call from "./components/Call";
 export default {
   name: "app",
   components: {
     Navigation,
     Footer,
-    Call,
-    
+    Call
   },
   setup() {
     const router = useRouter();
     const route = useRoute();
 
     onBeforeMount(() => {
-      firebase.auth().onAuthStateChanged((user)=> {
-        if (route.path == ("/") && !user) {
-          router.replace('/')
+      firebase.auth().onAuthStateChanged(user => {
+        if (route.path == "/" && !user) {
+          router.replace("/");
         }
-        if (route.path == ("/admin") && !user) {
-          router.replace("/login")
-
+        if (route.path == "/admin" && !user) {
+          router.replace("/login");
         }
       });
     });
   }
-}
+};
 </script>
 
 <style lang="scss">
 #app {
-  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
- 
 }
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 * {
@@ -137,8 +132,4 @@ button,
   font-size: 12px;
   color: red;
 }
-
-
-
-
 </style>

@@ -6,8 +6,6 @@ import AdminSanja from '../views/AdminSanja.vue'
 import Login from '../views/Login.vue'
 import Kontakt from '../views/Kontakt'
 import Cenovnik from '../views/Cenovnik'
-import Proba from '../views/Proba'
-import ZakaziSanja from '../views/ZakaziSanja'
 import Contact from '../views/Contact'
 
 const routes = [
@@ -20,11 +18,6 @@ const routes = [
     path: '/',
     name: 'Zakazi',
     component: Zakazi
-  },
-  {
-    path: '/zakazisanja',
-    name: 'ZakaziSanja',
-    component: ZakaziSanja
   },
   {
     path: '/cenovnik',

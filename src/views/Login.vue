@@ -1,26 +1,19 @@
 <template>
-    <div class="form-wrap">
-        <form class="login">
-            
-            <h2>Login to Admin panel</h2>
-            <div class="inputs">
-                <div class="input">
-                    <input type="text" placeholder="Email" v-model="email">
-                    <!-- <email class="icon" /> -->
-                </div>
-                <div class="input">
-                    <input type="password" placeholder="Password" v-model="password">
-                    <!-- <password class="icon" /> -->
-                </div>
-                <div v-show="error" class="error"> {{this.errorMsg}}</div>
-            </div>
-        
-            <button @click.prevent="signIn">Sign in</button>
-            
-        </form>
-      
-
-    </div>
+  <div class="form-wrap">
+    <form class="login">
+      <h2>Login to Admin panel</h2>
+      <div class="inputs">
+        <div class="input">
+          <input type="text" placeholder="Email" v-model="email" />
+        </div>
+        <div class="input">
+          <input type="password" placeholder="Password" v-model="password" />
+        </div>
+        <div v-show="error" class="error">{{this.errorMsg}}</div>
+      </div>
+      <button @click.prevent="signIn">Sign in</button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -28,33 +21,36 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
 export default {
-    name: "Admin",
-    components: {
-        // email, password
-    },
-    data() {
-        return {
-            email:"",
-            password: "",
-            error: null,
-            errorMsg: "",
-        }
-    },
-    methods: {
-      signIn() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(() => {
-          this.$router.push({name: "Admin"});
+  name: "Admin",
+  components: {
+    // email, password
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+      error: null,
+      errorMsg: ""
+    };
+  },
+  methods: {
+    signIn() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          this.$router.push({ name: "Admin" });
           this.error = false;
           this.errorMsg = "";
           console.log(firebase.auth().currentUser.uid);
-
-        }).catch(err => {
+        })
+        .catch(err => {
           this.error = true;
           this.errorMsg = err.message;
-        })
-      }
+        });
     }
-}
+  }
+};
 </script>
 
 <style lang="scss">
